@@ -1,0 +1,44 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{hyperref}
+\geometry{margin=0.8in}
+
+\title{Title: Snow Layer Boundary Detection in Radar Echograms}
+\author{Mohammad Ful Hossain Seikh (3041351)}
+\date{April 15, 2025}
+
+\begin{document}
+
+\maketitle
+
+\section*{Motivation}
+
+Analyzing snow radar echograms (radargrams) to identify internal snow layers is an essential part of understanding seasonal snowpack, accumulation, and overall climate trends in polar regions. The current process often involves manual tracing, which is slow, subjective, and hard to scale. My goal is to develop a machine learning model that can automatically detect snow layer boundaries in radargrams using deep learning, hopefully making the process faster and more consistent.
+
+\section*{Data}
+
+I will be using the echogram images provided by the \href{https://data.cresis.ku.edu/data/snow/}{CReSIS Snow Radar dataset}, which is publicly available through their website. These are radargram images showing the backscatter profile of snow and internal layers. The dataset includes many frames from different campaigns (Greenland, Antarctica, etc.) from 2009 to 2023, but I will start with a small, focused subset for practicality. Since labeled data are not readily available, I will be combining two strategies:
+\begin{itemize}
+    \item Manually labeling a small number of images to get high-quality supervision.
+    \item Using simple image processing techniques (like edge detection or brightness thresholds) to generate weak labels for the rest.
+\end{itemize}
+This should allow the model to learn the general structure from noisy labels and refine its accuracy with a few good examples.
+
+\section*{Method}
+
+The core model will be a convolutional neural network (CNN), most likely a light-weight segmentation network like U-Net. It’s designed for image-to-image tasks like this and is relatively straightforward to train with limited data. The main challenge will be learning from a combination of noisy and clean labels and dealing with the visual variability across radargrams. I will start simple and keep things flexible depending on how fast the model trains and generalizes.
+
+\section*{Experiments}
+
+I will train the model first on the weakly labeled data, and then fine-tune it on the small set of hand-labeled images. I will also do some ablation to see how the model performs using only manual labels versus both sources together. To evaluate the results, I will use:
+\begin{itemize}
+    \item \textbf{F1 score} – to measure balance between precision and recall on the layer pixels.
+    \item \textbf{Intersection-over-Union (IoU)} – to measure how well the predicted layer masks match the true ones.
+    \item \textbf{Visual overlays} – plotting predicted vs. true layer boundaries to check qualitative performance.
+\end{itemize}
+This combination should give both a number based and visual understanding of how well the model is doing.
+
+\end{document}
+
+

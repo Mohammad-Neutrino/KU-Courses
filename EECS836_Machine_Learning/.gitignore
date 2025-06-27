@@ -1,0 +1,38 @@
+# macOS system files
+.DS_Store
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.so
+
+# Jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# Environment files
+.env
+.venv/
+env/
+venv/
+
+# VS Code settings
+.vscode/
+
+# Data & model artifacts
+*.pth
+*.pt
+*.npy
+
+# Logs and outputs
+*.log
+
+# LaTeX
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+
+# OS trash
+.Trashes
+
