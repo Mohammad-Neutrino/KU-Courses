@@ -1,0 +1,36 @@
+   GRE Score  TOEFL Score  University Rating  ...  CGPA  Research  Chance of Admit 
+0        337          118                  4  ...  9.65         1              0.92
+1        324          107                  4  ...  8.87         1              0.76
+2        316          104                  3  ...  8.00         1              0.72
+3        322          110                  3  ...  8.67         1              0.80
+4        314          103                  2  ...  8.21         0              0.65
+
+[5 rows x 8 columns] 
+
+
+        GRE Score  TOEFL Score  ...    Research  Chance of Admit 
+count  500.000000   500.000000  ...  500.000000         500.00000
+mean   316.472000   107.192000  ...    0.560000           0.72174
+std     11.295148     6.081868  ...    0.496884           0.14114
+min    290.000000    92.000000  ...    0.000000           0.34000
+25%    308.000000   103.000000  ...    0.000000           0.63000
+50%    317.000000   107.000000  ...    1.000000           0.72000
+75%    325.000000   112.000000  ...    1.000000           0.82000
+max    340.000000   120.000000  ...    1.000000           0.97000
+
+[8 rows x 8 columns] 
+
+
+This table has 7 features to predict the chance of one's admission:
+GRE Score
+TOEFL Score
+University Rating
+SOP (Statement of Purpose)
+LOR (Letter of Recommendation)
+CGPA (Undergraduate GPA)
+Research (Whether someone has a research experience in the past)
+The GRE Score, TOEFL Score, CGPA, LOR, and SOP are numeric, while Univeristy Rating and Research are categorical.
+
+
+Mean absolute error for linear model: 0.0423
+Mean absolute error for linear model after fit: 0.0419
